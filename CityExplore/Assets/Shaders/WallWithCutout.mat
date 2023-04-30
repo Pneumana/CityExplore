@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Water
-  m_Shader: {fileID: -6465566751694194690, guid: 150a3186332a11740a29d3534952a6e8, type: 3}
+  m_Name: WallWithCutout
+  m_Shader: {fileID: -6465566751694194690, guid: 2b399fe040e4a9e4c90ddb6db9a2ffa4, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 2
@@ -20,7 +20,7 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
-    - _SampleTexture2D_760549f0e0304331b4c4b8c4d92eb105_Texture_1:
+    - _MainTex:
         m_Texture: {fileID: 2800000, guid: 6722ad7fa6c2ae54f961b1119fa7772b, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -38,26 +38,16 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _FoamAmount: 5
-    - _FoamCutoff: 2
-    - _FoamScale: 1
-    - _FoamSpeed: 0.1
-    - _NoiseSpeed: 0.1
+    - _CutoutFalloff: 0.1
+    - _CutoutSize: 0.15
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _RippleIntensity: 1
-    - _Slimness: 5
-    - _Speed: 1
-    - _WaterDepth: 10
-    - _WaterDepthIntensity: 0.5
-    - _rippleDensity: 7
     m_Colors:
-    - _BaseColor: {r: 0.2265931, g: 0.496203, b: 0.7169812, a: 0.25490198}
-    - _DeepWater: {r: 0.033641864, g: 0.18424113, b: 0.26415092, a: 1}
-    - _FoamColor: {r: 1, g: 1, b: 1, a: 0.83137256}
-    - _RippleColor: {r: 0, g: 1.105882, b: 1.498039, a: 0}
+    - _CutoutPosition: {r: 0.5, g: 0.5, b: 0, a: 0}
+    - _Offset: {r: 0, g: 0, b: 0, a: 0}
+    - _Tiling: {r: 1, g: 1, b: 0, a: 0}
   m_BuildTextureStacks: []
---- !u!114 &9109075837051335884
+--- !u!114 &3546013457572550952
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}

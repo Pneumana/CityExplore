@@ -4,16 +4,17 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    Rigidbody2D rb;
+    Rigidbody rb;
     public GameObject shadow;
     public float speed;
     float zAxis;
     float zStart;
+    public float jumpStr;
     bool isJumping;
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody>();
         zStart = transform.position.z;
     }
 
@@ -38,14 +39,15 @@ public class PlayerMovement : MonoBehaviour
         {
             xInput = 1;
         }
-        if (Input.GetKey(KeyCode.Space) && zAxis<=0)
+        if (Input.GetKey(KeyCode.Space) && isJumping == false)
         {
             Debug.Log("Jump");
             isJumping = true;
+            rb.AddForce(new Vector3(0, jumpStr, 0), ForceMode.Impulse);
         }
-        if (isJumping)
+        if(isJumping)
             Jump();
-        rb.velocity = new Vector2(xInput,yInput) * speed;
+        rb.AddForce( new Vector3(xInput,0,yInput) * speed, ForceMode.Impulse);
         if(shadow != null)
         {
             shadow.transform.position = new Vector3(transform.position.x, transform.position.y - 0.5f, shadow.transform.position.z);
@@ -55,27 +57,12 @@ public class PlayerMovement : MonoBehaviour
     }
     void Jump()
     {
-        if(zAxis<Mathf.PI)
-            zAxis+=3.14f * Time.deltaTime;
-        else
-        {
-            Debug.Log("Landed from Jump");
-            zAxis = 0;
-            gameObject.layer = 0;
-            isJumping = false;
-        }
-        if(zAxis < Mathf.PI / 2 && zAxis > 0)
-        {
-            //first part of the jump
-            gameObject.layer = 3;
-        }
-        else
-        {
-            
-            //falling part of the jump
-        }
-        var sinedZ = Mathf.Sin(zAxis);
-        gameObject.transform.position = new Vector3(transform.position.x, transform.position.y, zStart - (sinedZ * 2));
-        shadow.transform.localScale = new Vector3(1 - sinedZ, 1 - sinedZ, 1 - sinedZ);
+        //fall = rb.velocity.y;
+        //gameObject.transform.position = new Vector3(transform.position.x, transform.position.y, zStart - (sinedZ * 2));
+        //shadow.transform.localScale = new Vector3(1 - sinedZ, 1 - sinedZ, 1 - sinedZ);
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        isJumping = false;
     }
 }
