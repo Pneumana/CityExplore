@@ -19,9 +19,9 @@ public class WallCutout : MonoBehaviour
         Vector2 cutoutPos = mainCamera.WorldToViewportPoint(targetObject.position);
         cutoutPos.y /= (Screen.width/Screen.height);
         Vector3 offset = targetObject.position - transform.position;
-        RaycastHit[] hitObjects = Physics.RaycastAll(transform.position, offset, offset.magnitude, wall);
+        //RaycastHit[] hitObjects = Physics.RaycastAll(transform.position, offset, offset.magnitude, wall);
 
-        for(int i = 0; i < hitObjects.Length; i++)
+        /*for(int i = 0; i < hitObjects.Length; i++)
         {
             Material[] mats = hitObjects[i].transform.GetComponent<Renderer>().materials;
             for(int n = 0; n < mats.Length; i++)
@@ -30,6 +30,6 @@ public class WallCutout : MonoBehaviour
                 mats[n].SetFloat("_CutoutSize", 0.1f);
                 mats[n].SetFloat("_CutoutFalloff", 0.05f);
             }
-        }
+        }*/
     }
 }
