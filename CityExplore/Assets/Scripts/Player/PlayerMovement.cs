@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -13,6 +14,7 @@ public class PlayerMovement : MonoBehaviour
     bool isJumping;
     Vector3 startedJump;
     public bool grounded = true;
+    float dashFrames;
     // Start is called before the first frame update
     void Start()
     {
@@ -50,11 +52,17 @@ public class PlayerMovement : MonoBehaviour
             zAxis = 0;
             rb.AddForce(new Vector3(0, jumpStr, 0), ForceMode.Impulse);
         }
+        if(!isJumping && grounded && Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            dashFrames = 2;
+        }
         if(isJumping)
             Jump();
+        if (dashFrames > 0)
+            Dash(xInput, yInput);
         rb.velocity = new Vector3(xInput, 0, yInput) * speed;
-        
-        if(!grounded && !isJumping)
+        //fall
+        if(!grounded && !isJumping && dashFrames >= 0)
         {
             transform.position += (Vector3.down * jumpStr) * Time.deltaTime;
         }
@@ -64,6 +72,12 @@ public class PlayerMovement : MonoBehaviour
             
             
         }
+    }
+    void Dash(float xin, float yin)
+    {
+        if(dashFrames > 0)
+            dashFrames-= Time.deltaTime;
+        //dash locks direction
     }
     void Jump()
     {

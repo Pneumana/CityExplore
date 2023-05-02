@@ -22,15 +22,7 @@ public class FloorFinder : MonoBehaviour
             Debug.Log("Left Gorund");
         }
     }*/
-    private void OnTriggerEnter(Collider other)
-    {
-        //Debug.Log("touch");
-        if (other.gameObject.tag == "Floor")
-        {
-            player.GetComponent<PlayerMovement>().grounded = true;
-            Debug.Log("Touched ground");
-        }
-    }
+
     private void OnTriggerExit(Collider other)
     {
         //Debug.Log("touch");
@@ -38,6 +30,15 @@ public class FloorFinder : MonoBehaviour
         {
             player.GetComponent<PlayerMovement>().grounded = false;
             Debug.Log("left ground");
+        }
+    }
+    private void OnTriggerStay(Collider other)
+    {
+        //Debug.Log("touch");
+        if (other.gameObject.tag == "Floor")
+        {
+            player.GetComponent<PlayerMovement>().grounded = true;
+            Debug.Log("Touched ground");
         }
     }
 }

@@ -1578,7 +1578,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shadow: {fileID: 0}
-  speed: 0.5
+  speed: 10
   jumpStr: 50
   grounded: 1
 --- !u!1 &1689979084
