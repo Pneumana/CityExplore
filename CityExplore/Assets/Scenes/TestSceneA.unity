@@ -1580,6 +1580,7 @@ MonoBehaviour:
   shadow: {fileID: 0}
   speed: 0.5
   jumpStr: 50
+  grounded: 1
 --- !u!1 &1689979084
 GameObject:
   m_ObjectHideFlags: 0
