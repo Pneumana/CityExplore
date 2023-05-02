@@ -5,7 +5,7 @@ using UnityEngine;
 public class WallCutout : MonoBehaviour
 {
     public Transform targetObject;
-    private LayerMask wall;
+    public LayerMask wall;
     private Camera mainCamera;
     // Start is called before the first frame update
     private void Awake()

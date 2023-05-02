@@ -12,10 +12,11 @@ public class CameraFollowPlayer : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        Vector3 lerp = Vector3.Lerp(new Vector3(player.transform.position.x, player.transform.position.y + 16, player.transform.position.z - 12), transform.position, 0.1f);
+        Vector3 modPos = new Vector3(player.transform.position.x, player.transform.position.y + 15, player.transform.position.z - 16f);
+        Vector3 lerp = Vector3.Slerp(transform.position, modPos, 0.1f);
         transform.position = lerp;
-        transform.LookAt(player.transform);
+        //transform.LookAt(player.transform);
     }
 }
