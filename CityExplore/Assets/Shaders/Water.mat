@@ -40,7 +40,7 @@ Material:
     m_Floats:
     - _FoamAmount: 4
     - _FoamCutoff: 2
-    - _FoamScale: 32
+    - _FoamScale: 1
     - _FoamSpeed: 0.1
     - _NoiseSpeed: 0.1
     - _Pixlation: 128
