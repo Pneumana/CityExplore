@@ -29,7 +29,7 @@ public class FloorFinder : MonoBehaviour
         if (other.gameObject.tag == "Floor")
         {
             player.GetComponent<PlayerMovement>().grounded = false;
-            Debug.Log("left ground");
+            //Debug.Log("left ground");
         }
     }
     private void OnTriggerStay(Collider other)
@@ -38,7 +38,7 @@ public class FloorFinder : MonoBehaviour
         if (other.gameObject.tag == "Floor")
         {
             player.GetComponent<PlayerMovement>().grounded = true;
-            Debug.Log("Touched ground");
+            //Debug.Log("Touched ground");
         }
     }
 }
