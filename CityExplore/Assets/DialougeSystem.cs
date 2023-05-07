@@ -147,6 +147,12 @@ public class DialougeSystem : MonoBehaviour
             var trigger = GameObject.Instantiate(Resources.Load<GameObject>("Dialouge/" + splitaction[1]));
             trigger.transform.position = GameObject.Find("Player").transform.position;
         }
+        if (splitaction[0] == "FACTION")
+        {
+            var targetFaction = int.Parse(splitaction[1]);
+            var reputationMod = int.Parse(splitaction[2]);
+            FactionRank.instance.RankUp(targetFaction, reputationMod);
+        }
 
     }
     public void PressedButton2()
