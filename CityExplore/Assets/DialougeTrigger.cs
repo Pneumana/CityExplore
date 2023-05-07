@@ -5,9 +5,12 @@ using UnityEngine;
 public class DialougeTrigger : MonoBehaviour
 {
     public Dialouge dialouge;
+    public bool destroyOnTrigger = false;
     public void SendDialouge()
     {
         FindObjectOfType<DialougeSystem>().EnterDialouge(dialouge);
+        if (destroyOnTrigger)
+            Destroy(gameObject);
     }
     private void OnTriggerEnter(Collider other)
     {

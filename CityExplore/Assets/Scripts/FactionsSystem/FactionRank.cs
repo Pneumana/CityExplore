@@ -7,11 +7,15 @@ public class FactionRank : MonoBehaviour
     public int landRank;
     public int seaRank;
     public int fishmanRank;
-
+    public static FactionRank instance;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        
+        if (instance == null)
+            instance = this;
+        else
+            Destroy(this.gameObject);
+        DontDestroyOnLoad(gameObject);
     }
     public void RankUp(int targetFaction, int increase)
     {
