@@ -7,9 +7,9 @@ public class CameraFollowPlayer : MonoBehaviour
     public GameObject player;
     public float zOffset = -16;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        
+        player = GameObject.Find("Player");
     }
 
     // Update is called once per frame
