@@ -8,6 +8,7 @@ public class FactionRank : MonoBehaviour
     public int seaRank;
     public int fishmanRank;
     public static FactionRank instance;
+    public bool hasEnteredTown = false;
     // Start is called before the first frame update
     void Awake()
     {
@@ -19,6 +20,15 @@ public class FactionRank : MonoBehaviour
         if (instance != null)
         {
             var player = GameObject.Find("Player");
+            var enterTown = GameObject.Find("FirstTimeEntrance");
+            if (!hasEnteredTown)
+            {
+                if(enterTown != null)
+                {
+                    player.transform.position = enterTown.transform.position;
+                    hasEnteredTown = true;
+                }
+            }
             if(player != null)
             {
                 var playerscript = player.GetComponent<PlayerMovement>();
