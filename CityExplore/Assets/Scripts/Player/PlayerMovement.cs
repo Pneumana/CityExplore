@@ -17,8 +17,9 @@ public class PlayerMovement : MonoBehaviour
     float dashFrames;
     Vector2 lockedinput;
 
-    bool hasDash;
-    bool hasStairs;
+    public bool hasJump;
+    public bool hasDash;
+    public bool hasStairs;
     // Start is called before the first frame update
     void Start()
     {
@@ -48,21 +49,30 @@ public class PlayerMovement : MonoBehaviour
         {
             xInput = 1;
         }
-        if (Input.GetKey(KeyCode.Space) && isJumping == false && dashFrames <= 0 && grounded)
+        if (hasDash)
         {
-            Debug.Log("Jump");
-            isJumping = true;
-            startedJump = transform.position;
-            zAxis = 0;
-            rb.AddForce(new Vector3(0, jumpStr, 0), ForceMode.Impulse);
-        }
-        if(!isJumping && grounded && Input.GetKeyDown(KeyCode.LeftShift))
-        {
+            if (!isJumping && grounded && Input.GetKeyDown(KeyCode.LeftShift))
+            {
                 dashFrames = 0.2f;
+            }
         }
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (hasJump)
         {
-            CastRamp();
+            if (Input.GetKey(KeyCode.Space) && isJumping == false && dashFrames <= 0 && grounded)
+            {
+                Debug.Log("Jump");
+                isJumping = true;
+                startedJump = transform.position;
+                zAxis = 0;
+                rb.AddForce(new Vector3(0, jumpStr, 0), ForceMode.Impulse);
+            }
+        }
+        if (hasStairs)
+        {
+            if (Input.GetKeyDown(KeyCode.Q))
+            {
+                CastRamp();
+            }
         }
         if(isJumping)
             Jump();
