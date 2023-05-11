@@ -13,7 +13,7 @@ public class PlayerMovement : MonoBehaviour
     public float jumpStr;
     public bool isJumping;
     Vector3 startedJump;
-    public bool grounded = true;
+    public bool grounded = false;
     float dashFrames;
     Vector2 lockedinput;
 

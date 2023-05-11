@@ -96,6 +96,7 @@ public class DialougeSystem : MonoBehaviour
     }
     public void DisplayNextSentence()
     {
+        Debug.Log("next line");
         if(sentences.Count == 0 && options == 0)
         {
             ExitDialouge();
@@ -152,6 +153,7 @@ public class DialougeSystem : MonoBehaviour
             var targetFaction = int.Parse(splitaction[1]);
             var reputationMod = int.Parse(splitaction[2]);
             FactionRank.instance.RankUp(targetFaction, reputationMod);
+            ExitDialouge();
         }
 
     }
