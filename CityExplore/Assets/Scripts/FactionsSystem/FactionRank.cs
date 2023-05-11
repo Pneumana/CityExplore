@@ -7,11 +7,35 @@ public class FactionRank : MonoBehaviour
     public int landRank;
     public int seaRank;
     public int fishmanRank;
-
+    public static FactionRank instance;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        
+        if (instance == null)
+            instance = this;
+        else
+            Destroy(this.gameObject);
+        DontDestroyOnLoad(gameObject);
+        if (instance != null)
+        {
+            var player = GameObject.Find("Player");
+            if(player != null)
+            {
+                var playerscript = player.GetComponent<PlayerMovement>();
+                if(landRank > 0)
+                {
+                    playerscript.hasJump = true;
+                }
+                if(seaRank >= 3)
+                {
+                    playerscript.hasDash = true;
+                }
+                if (landRank >= 3)
+                {
+                    playerscript.hasStairs = true;
+                }
+            }
+        }
     }
     public void RankUp(int targetFaction, int increase)
     {
@@ -41,5 +65,9 @@ public class FactionRank : MonoBehaviour
     void Update()
     {
         
+    }
+    void UpdateAbilities()
+    {
+
     }
 }
