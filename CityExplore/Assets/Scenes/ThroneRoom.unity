@@ -403,6 +403,54 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &460924962
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 460924964}
+  - component: {fileID: 460924963}
+  m_Layer: 0
+  m_Name: FactionSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &460924963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 460924962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5526b04925efe3348810e9364769cce7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  landRank: 0
+  seaRank: 0
+  fishmanRank: 0
+  hasEnteredTown: 0
+--- !u!4 &460924964
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 460924962}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -50.465275, y: -765.1987, z: 1235.1226}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 15
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &474155919
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -625,8 +673,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 628614222}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 16.54, y: 11.92, z: 4.250017}
-  m_LocalScale: {x: 15.924, y: 16.0476, z: 10.706628}
+  m_LocalPosition: {x: 16.54, y: 11.92, z: -2.49}
+  m_LocalScale: {x: 15.924, y: 36.968857, z: 10.706628}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -991,7 +1039,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 781992037}
-  zOffset: -10
+  zOffset: -5
+  yOffset: 5
 --- !u!114 &799049222
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1071,7 +1120,7 @@ MonoBehaviour:
     - The port city of Woolcrag has been closed for too long.
     - It was founded by the combined efforts of both man and fish...
     - ...is on the verge of being torn apart by both. That's why I'm sending you,
-      my Helm of the Guard, to sort this out.
+      my trusted advisor, to sort this out.
     - Listen to both sides of the story before resolving the conflict. I don't care
       who comes out on top.
     - All I need is that port up and running again. The whole kingdom is suffering
@@ -1204,8 +1253,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1025712853}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0.500002, y: 1.4207296, z: 4.250017}
-  m_LocalScale: {x: 15.924, y: 16.0476, z: 10.706628}
+  m_LocalPosition: {x: 0.500002, y: 1.4207296, z: -4.7}
+  m_LocalScale: {x: 15.924, y: 47.15106, z: 10.706628}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1550,7 +1599,7 @@ Transform:
   m_GameObject: {fileID: 1527560946}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0.37, y: 11.92, z: 20.2}
-  m_LocalScale: {x: 15.924, y: 16.0476, z: 10.706628}
+  m_LocalScale: {x: 15.924, y: 16.0476, z: 16.792274}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
