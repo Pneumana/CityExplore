@@ -7,9 +7,13 @@ public class FactionLockedDoor : MonoBehaviour
     public int landLevel;
     public int seaLevel;
     public int fishmanLevel;
+    public bool specificStep;
     void Start()
     {
-        UpdateFactions();
+        if (specificStep)
+            CanISpawn();
+        else
+            UpdateFactions();
     }
     public void UpdateFactions()
     {
@@ -27,5 +31,23 @@ public class FactionLockedDoor : MonoBehaviour
                 }
             }
         }
+    }
+    public void CanISpawn()
+    {
+        var factions = FactionRank.instance;
+        if (factions != null)
+        {
+            if (factions.landRank == landLevel)
+            {
+                if (factions.seaRank == seaLevel)
+                {
+                    if (factions.fishmanRank == fishmanLevel)
+                    {
+                        return;
+                    }
+                }
+            }
+        }
+        Destroy(gameObject);
     }
 }
