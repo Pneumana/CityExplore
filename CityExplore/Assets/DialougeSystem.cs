@@ -39,6 +39,9 @@ public class DialougeSystem : MonoBehaviour
         character.gameObject.SetActive(false);
         greyout.SetActive(false);
         textbox.SetActive(false);
+        leftButton.SetActive(false);
+        rightButton.SetActive(false);
+        middleButton.SetActive(false);
         //enable player input
         GameObject.Find("Player").GetComponent<PlayerMovement>().enabled = true;
     }
@@ -52,7 +55,11 @@ public class DialougeSystem : MonoBehaviour
             sentences.Enqueue(line);
         }
         character.gameObject.SetActive(true);
-        character.sprite = Resources.Load<Sprite>("Textures/UI/NPCS/" + talk.name);
+        var newsprite = Resources.Load<Sprite>("Textures/UI/NPCS/" + talk.name);
+        if (newsprite == null)
+            character.sprite = Resources.Load<Sprite>("Textures/UI/NPCS/none");
+        else
+            character.sprite = newsprite;
         greyout.SetActive(true);
         textbox.SetActive(true);
         DisplayNextSentence();

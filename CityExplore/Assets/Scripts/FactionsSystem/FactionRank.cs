@@ -9,6 +9,7 @@ public class FactionRank : MonoBehaviour
     public int fishmanRank;
     public static FactionRank instance;
     public bool hasEnteredTown = false;
+    public string cameFrom;
     public GameObject[] factionObjects;
     // Start is called before the first frame update
     void Awake()
@@ -28,6 +29,14 @@ public class FactionRank : MonoBehaviour
                 {
                     player.transform.position = enterTown.transform.position;
                     hasEnteredTown = true;
+                }
+            }
+            if(cameFrom != "")
+            {
+                var here = GameObject.Find(cameFrom);
+                if (here != null)
+                {
+                    player.transform.position = here.transform.position;
                 }
             }
             if(player != null)
@@ -84,6 +93,8 @@ public class FactionRank : MonoBehaviour
         //zipline
         //hit ground
         //dash
+
+        //player gets abilites right before an ending. "Thanks for helping us this much" type thing.
     }
     // Update is called once per frame
     void Update()

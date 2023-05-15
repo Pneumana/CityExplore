@@ -11,6 +11,7 @@ public class CutscenePlayer : MonoBehaviour
     public GameObject[] sponges;
     public GameObject waterlevel;
     public int playCutsceneOnStart = 0;
+    float spongeSpeed = 0.1f;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,10 +27,10 @@ public class CutscenePlayer : MonoBehaviour
         }
         if(playingCutscene == 2)
         {
-            waterlevel.transform.position += Vector3.down * Time.deltaTime;
+            waterlevel.transform.position += Vector3.down * Time.deltaTime * spongeSpeed;
             foreach(GameObject sponge in sponges)
             {
-                sponge.transform.localScale += Vector3.one * Time.deltaTime;
+                sponge.transform.localScale += Vector3.one * Time.deltaTime * spongeSpeed;
             }
         }
 
