@@ -12,6 +12,7 @@ public class LoadScene : MonoBehaviour
         {
             Debug.Log("going to new scene: " + sceneName);
             FactionRank.instance.cameFrom = SceneManager.GetActiveScene().name;
+            FactionRank.instance.wait = 0;
             SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
         }
     }

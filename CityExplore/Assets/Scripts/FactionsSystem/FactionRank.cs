@@ -1,5 +1,7 @@
+using Mono.Cecil.Cil;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 
 public class FactionRank : MonoBehaviour
@@ -11,57 +13,25 @@ public class FactionRank : MonoBehaviour
     public bool hasEnteredTown = false;
     public string cameFrom;
     public GameObject[] factionObjects;
+    private GameObject here;
+    public int wait = 0;
     // Start is called before the first frame update
     void Awake()
     {
         if (instance == null)
-            instance = this;
-        else if (instance != null)
-            Destroy(this.gameObject);
-        DontDestroyOnLoad(gameObject);
-        if (instance == this)
         {
-            var player = GameObject.Find("Player");
-            var enterTown = GameObject.Find("FirstTimeEntrance");
-            if (!hasEnteredTown)
-            {
-                if(enterTown != null)
-                {
-                    Debug.Log("Entered town for the first time");
-                    player.transform.position = enterTown.transform.position;
-                    hasEnteredTown = true;
-                }
-            }
-            if(cameFrom != "")
-            {
-                var here = GameObject.Find(cameFrom);
-                if (here != null)
-                {
-                    Debug.Log("player came from " + cameFrom);
-                    player.transform.position = here.transform.position;
-                }
-            }
-            if(player != null)
-            {
-                var playerscript = player.GetComponent<PlayerMovement>();
-                if(landRank > 0)
-                {
-                    playerscript.hasJump = true;
-                }
-                if(seaRank >= 3)
-                {
-                    playerscript.hasDash = true;
-                }
-                if (landRank >= 3)
-                {
-                    playerscript.hasStairs = true;
-                }
-            }
+            instance = this;
+            DontDestroyOnLoad(gameObject);
         }
+        else
+            Destroy(this.gameObject);
+        
     }
+    
     private void Start()
     {
         UpdateFactionObjs();
+        //LoadPosition();
     }
     public void UpdateFactionObjs()
     {
@@ -70,6 +40,55 @@ public class FactionRank : MonoBehaviour
         {
             obj.GetComponent<FactionLockedDoor>().UpdateFactions();
         }
+    }
+    private GameObject WhereAmI(string name)
+    {
+        GameObject output = null;
+        output = GameObject.Find(name);
+        return output;
+    } 
+    public void LoadPosition()
+    {
+
+            var player = GameObject.Find("Player");
+            var enterTown = GameObject.Find("FirstTimeEntrance");
+        /*if (!hasEnteredTown)
+        {
+            if(enterTown != null)
+            {
+                Debug.Log("Entered town for the first time");
+                player.transform.position = enterTown.transform.position;
+                hasEnteredTown = true;
+            }
+        }*/
+        //Debug.Log("came from " + cameFrom);
+        Debug.Log("player came from " + instance.cameFrom);
+        //var here = WhereAmI(instance.cameFrom);
+        //Debug.Log(here.name);
+         if (here != null)
+         {
+            Debug.Log(here.name);
+            Debug.Log("object is not null");
+            player.transform.position = here.transform.position;
+         }
+            
+            if (player != null)
+            {
+                var playerscript = player.GetComponent<PlayerMovement>();
+                if (landRank > 0)
+                {
+                    playerscript.hasJump = true;
+                }
+                if (seaRank >= 3)
+                {
+                    playerscript.hasDash = true;
+                }
+                if (landRank >= 3)
+                {
+                    playerscript.hasStairs = true;
+                }
+            }
+        
     }
     public void RankUp(int targetFaction, int increase)
     {
@@ -101,7 +120,21 @@ public class FactionRank : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (wait <= 1)
+            wait++;
+        if(wait == 1)
+        {
+            
+            LoadPosition();
+        }
+        if(here == null)
+        {
+            here = GameObject.Find(cameFrom);
+            if(here != null)
+            {
+                LoadPosition();
+            }
+        }
     }
     void UpdateAbilities()
     {
