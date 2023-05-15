@@ -53,7 +53,7 @@ public class PlayerMovement : MonoBehaviour
         {
             if (!isJumping && grounded && Input.GetKeyDown(KeyCode.LeftShift))
             {
-                dashFrames = 0.2f;
+                dashFrames = 0.4f;
             }
         }
         if (hasJump)
