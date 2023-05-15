@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Ocean.unity
     guid: 42646d5b3cd547d40ac269eca5507647
+  - enabled: 1
+    path: Assets/Scenes/Bank.unity
+    guid: d4e084e06b283664bab0eadd79abf74d
   m_configObjects: {}

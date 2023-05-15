@@ -39,6 +39,9 @@ public class DialougeSystem : MonoBehaviour
         character.gameObject.SetActive(false);
         greyout.SetActive(false);
         textbox.SetActive(false);
+        leftButton.SetActive(false);
+        rightButton.SetActive(false);
+        middleButton.SetActive(false);
         //enable player input
         GameObject.Find("Player").GetComponent<PlayerMovement>().enabled = true;
     }
