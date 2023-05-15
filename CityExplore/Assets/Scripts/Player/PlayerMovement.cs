@@ -16,7 +16,7 @@ public class PlayerMovement : MonoBehaviour
     public bool grounded = false;
     float dashFrames;
     Vector2 lockedinput;
-
+    public Animator animator;
     public bool hasJump;
     public bool hasDash;
     public bool hasStairs;
@@ -90,6 +90,22 @@ public class PlayerMovement : MonoBehaviour
             yInput = output.y;
         }
         rb.velocity = new Vector3(xInput, 0, yInput) * speed;
+        if(xInput !=0 || yInput != 0)
+        {
+            animator.SetBool("IsWalking", true);
+        }
+        else
+        {
+            animator.SetBool("IsWalking", false);
+        }
+        if(xInput > 0)
+        {
+            animator.gameObject.GetComponent<SpriteRenderer>().flipX = true;
+        }
+        if(xInput < 0)
+        {
+            animator.gameObject.GetComponent<SpriteRenderer>().flipX = false;
+        }
         //fall
         if(!grounded && !isJumping && dashFrames <= 0)
         {
