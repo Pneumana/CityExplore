@@ -109,7 +109,7 @@ public class PlayerMovement : MonoBehaviour
         //fall
         if(!grounded && !isJumping && dashFrames <= 0)
         {
-            Debug.Log("fall");
+            //Debug.Log("fall");
             transform.position += (Vector3.down * jumpStr * 2) * Time.deltaTime;
         }
         if(shadow != null)

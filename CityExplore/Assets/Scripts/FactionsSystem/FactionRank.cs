@@ -16,10 +16,10 @@ public class FactionRank : MonoBehaviour
     {
         if (instance == null)
             instance = this;
-        else
+        else if (instance != null)
             Destroy(this.gameObject);
         DontDestroyOnLoad(gameObject);
-        if (instance != null)
+        if (instance == this)
         {
             var player = GameObject.Find("Player");
             var enterTown = GameObject.Find("FirstTimeEntrance");
@@ -27,6 +27,7 @@ public class FactionRank : MonoBehaviour
             {
                 if(enterTown != null)
                 {
+                    Debug.Log("Entered town for the first time");
                     player.transform.position = enterTown.transform.position;
                     hasEnteredTown = true;
                 }
@@ -36,6 +37,7 @@ public class FactionRank : MonoBehaviour
                 var here = GameObject.Find(cameFrom);
                 if (here != null)
                 {
+                    Debug.Log("player came from " + cameFrom);
                     player.transform.position = here.transform.position;
                 }
             }
