@@ -9,6 +9,7 @@ public class FactionRank : MonoBehaviour
     public int fishmanRank;
     public static FactionRank instance;
     public bool hasEnteredTown = false;
+    public GameObject[] factionObjects;
     // Start is called before the first frame update
     void Awake()
     {
@@ -47,8 +48,21 @@ public class FactionRank : MonoBehaviour
             }
         }
     }
+    private void Start()
+    {
+        UpdateFactionObjs();
+    }
+    public void UpdateFactionObjs()
+    {
+        factionObjects = GameObject.FindGameObjectsWithTag("UpdateOnFaction");
+        foreach (GameObject obj in factionObjects)
+        {
+            obj.GetComponent<FactionLockedDoor>().UpdateFactions();
+        }
+    }
     public void RankUp(int targetFaction, int increase)
     {
+        UpdateFactionObjs();
         //land
         if(targetFaction == 0)
         {

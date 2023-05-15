@@ -8,10 +8,13 @@ public class CutscenePlayer : MonoBehaviour
     public int playingCutscene = 0;
 
     public GameObject tsunamiWave;
+    public GameObject[] sponges;
+    public GameObject waterlevel;
+    public int playCutsceneOnStart = 0;
     // Start is called before the first frame update
     void Start()
     {
-        //StartCutscene(1);
+        StartCutscene(playCutsceneOnStart);
     }
 
     // Update is called once per frame
@@ -21,6 +24,15 @@ public class CutscenePlayer : MonoBehaviour
         {
             tsunamiWave.GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 5);
         }
+        if(playingCutscene == 2)
+        {
+            waterlevel.transform.position += Vector3.down * Time.deltaTime;
+            foreach(GameObject sponge in sponges)
+            {
+                sponge.transform.localScale += Vector3.one * Time.deltaTime;
+            }
+        }
+
     }
 
     public void StartCutscene(int i)
@@ -34,6 +46,12 @@ public class CutscenePlayer : MonoBehaviour
             var camerascript = Camera.main.GetComponent<CameraFollowPlayer>();
             camerascript.player = tsunamiWave;
             camerascript.zOffset = -11f;
+        }
+        if(playingCutscene == 2)
+        {
+            sponges = GameObject.FindGameObjectsWithTag("Sponge");
+            var camerascript = Camera.main.GetComponent<CameraFollowPlayer>();
+            camerascript.player = waterlevel;
         }
     }
     public void EndCutscene()

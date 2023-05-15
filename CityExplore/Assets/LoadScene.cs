@@ -10,6 +10,7 @@ public class LoadScene : MonoBehaviour
     {
         if(collision.gameObject.name == "Player")
         {
+            Debug.Log("going to new scene: " + sceneName);
             SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
         }
     }
