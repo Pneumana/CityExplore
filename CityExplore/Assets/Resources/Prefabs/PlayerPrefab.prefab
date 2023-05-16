@@ -233,6 +233,7 @@ GameObject:
   - component: {fileID: 1352939590842924714}
   - component: {fileID: 5658592736396918439}
   - component: {fileID: 6606991716909055556}
+  - component: {fileID: 4347513740848251715}
   - component: {fileID: 7267727798604022743}
   m_Layer: 0
   m_Name: Player
@@ -295,6 +296,18 @@ MonoBehaviour:
   hasJump: 0
   hasDash: 0
   hasStairs: 0
+--- !u!114 &4347513740848251715
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7659709129234988079}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d42b73ae055b38b49bf442f1fd857c3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!65 &7267727798604022743
 BoxCollider:
   m_ObjectHideFlags: 0
