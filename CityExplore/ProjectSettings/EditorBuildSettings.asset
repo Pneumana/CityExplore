@@ -29,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Credits.unity
     guid: aa890efcf3bee11469b93285a81b1ae5
+  - enabled: 1
+    path: Assets/Scenes/OceanHall.unity
+    guid: 985fb797020b7e94f84f3447f7984ef0
   m_configObjects: {}
