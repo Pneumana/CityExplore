@@ -9776,6 +9776,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: SeaHall
       objectReference: {fileID: 0}
+    - target: {fileID: 6695284893658761827, guid: d4cce42a53a48d94c872feb72be55978, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 30.17
+      objectReference: {fileID: 0}
+    - target: {fileID: 6695284893658761827, guid: d4cce42a53a48d94c872feb72be55978, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -20.81
+      objectReference: {fileID: 0}
     - target: {fileID: 8523746825110260466, guid: d4cce42a53a48d94c872feb72be55978, type: 3}
       propertyPath: m_RootOrder
       value: 5

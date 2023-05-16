@@ -61,6 +61,7 @@ public class PlayerMovement : MonoBehaviour
                 dashFrames = 0.4f;
             }
         }
+        Abilities();
         if (hasJump)
         {
             if (Input.GetKey(KeyCode.Space) && isJumping == false && dashFrames <= 0 && grounded)
@@ -161,5 +162,21 @@ public class PlayerMovement : MonoBehaviour
         var ramp = Instantiate(Resources.Load<GameObject>("Prefabs/Target"));
         ramp.transform.position = gameObject.transform.position;
         this.enabled = false;
+    }
+    void Abilities()
+    {
+        var FR = FactionRank.instance.GetComponent<FactionRank>();
+        if (FR.landRank >= 1)
+        {
+            hasJump = true;
+        }
+        if (FR.seaRank >= 3)
+        {
+            hasDash = true;
+        }
+        if (FR.landRank >= 3)
+        {
+            hasStairs = true;
+        }
     }
 }
