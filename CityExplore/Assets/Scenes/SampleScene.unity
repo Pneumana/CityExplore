@@ -4888,6 +4888,37 @@ Transform:
   m_Father: {fileID: 44134978}
   m_RootOrder: 95
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!1 &544554593
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 544554594}
+  m_Layer: 8
+  m_Name: Warehouse
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &544554594
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 544554593}
+  m_LocalRotation: {x: 0.7039215, y: 0.06704174, z: -0.06704174, w: 0.7039215}
+  m_LocalPosition: {x: -2.7361033, y: 0.63443947, z: -10.108301}
+  m_LocalScale: {x: 5, y: 5, z: 5}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1688766754}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &559576035
 GameObject:
   m_ObjectHideFlags: 0
@@ -5103,6 +5134,7 @@ MonoBehaviour:
   hasEnteredTown: 0
   cameFrom: 
   factionObjects: []
+  wait: 0
 --- !u!4 &598372405
 Transform:
   m_ObjectHideFlags: 0
@@ -5839,6 +5871,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7adba6ae631870e42b1172c9c2e17b9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &668000000
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 668000001}
+  m_Layer: 8
+  m_Name: CityHall
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &668000001
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 668000000}
+  m_LocalRotation: {x: 0.6947744, y: 0.13148601, z: -0.13148601, w: 0.6947744}
+  m_LocalPosition: {x: -3.7053857, y: 0.71285963, z: -12.292301}
+  m_LocalScale: {x: 5, y: 5, z: 5}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 960661756}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &679236370
 GameObject:
   m_ObjectHideFlags: 0
@@ -8152,6 +8215,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1c0676ff21d87b94eb0e13e36356677c, type: 3}
+--- !u!4 &960661756 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5885646132171504516, guid: 1c0676ff21d87b94eb0e13e36356677c, type: 3}
+  m_PrefabInstance: {fileID: 960661755}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &976058874
 GameObject:
   m_ObjectHideFlags: 0
@@ -13624,6 +13692,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ba1b62d542a178d4f970fe9d782a4abf, type: 3}
+--- !u!4 &1688766754 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7674137056297733181, guid: ba1b62d542a178d4f970fe9d782a4abf, type: 3}
+  m_PrefabInstance: {fileID: 1688766753}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1689979084
 GameObject:
   m_ObjectHideFlags: 0
