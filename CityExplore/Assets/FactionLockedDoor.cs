@@ -45,13 +45,15 @@ public class FactionLockedDoor : MonoBehaviour
         {
             if (factions.landRank == landLevel)
             {
-                if (factions.seaRank == seaLevel)
-                {
-                    if (factions.fishmanRank == fishmanLevel)
-                    {
-                        flip = true;
-                    }
-                }
+                flip = true;
+            }
+            if (factions.fishmanRank == fishmanLevel)
+            {
+                flip = true;
+            }
+            if (factions.seaRank == seaLevel)
+            {
+                flip = true;
             }
         }
         if (!factions.factionObjects.Contains(gameObject))

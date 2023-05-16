@@ -635,6 +635,7 @@ MonoBehaviour:
   cameFrom: 
   factionObjects: []
   wait: 0
+  forceRefresh: 0
 --- !u!4 &460924964
 Transform:
   m_ObjectHideFlags: 0

@@ -77,14 +77,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialouge:
     name: The King
-    options: 0
+    options: 1
     buttons:
     - button1
-    - button2
+    - I'll be swift
     - button3
     buttonAction:
     - END
-    - 
+    - FACTION:0:1
     - 
     sentences:
     - Make haste. The two factions may not remain passive for long, I fear.
