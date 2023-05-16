@@ -22,19 +22,27 @@ public class FactionLockedDoor : MonoBehaviour
     }
     public void Kill()
     {
+        var flip = true;
         var factions = FactionRank.instance;
         if (factions != null)
         {
-            if (factions.landRank >= landLevel)
+            if (factions.landRank >= landLevel && landLevel > 0)
             {
-                if (factions.seaRank >= seaLevel)
-                {
-                    if (factions.fishmanRank >= fishmanLevel)
-                    {
-                        gameObject.SetActive(false);
-                    }
-                }
+                flip = false;
             }
+            if (factions.fishmanRank >= fishmanLevel && fishmanLevel > 0)
+            {
+                flip = false;
+            }
+            if (factions.seaRank >= seaLevel && seaLevel > 0)
+            {
+                flip = false;
+            }
+        }
+        gameObject.SetActive(flip);
+        if (!factions.factionObjects.Contains(gameObject))
+        {
+            factions.factionObjects.Add(gameObject);
         }
     }
     public void CanISpawn()
@@ -43,23 +51,24 @@ public class FactionLockedDoor : MonoBehaviour
         var factions = FactionRank.instance;
         if (factions != null)
         {
-            if (factions.landRank == landLevel)
+            if (factions.landRank == landLevel && landLevel > 0)
             {
                 flip = true;
             }
-            if (factions.fishmanRank == fishmanLevel)
+            if (factions.fishmanRank == fishmanLevel && fishmanLevel > 0)
             {
                 flip = true;
             }
-            if (factions.seaRank == seaLevel)
+            if (factions.seaRank == seaLevel && seaLevel > 0)
             {
                 flip = true;
             }
         }
+        gameObject.SetActive(flip);
         if (!factions.factionObjects.Contains(gameObject))
         {
             factions.factionObjects.Add(gameObject);
         }
-        gameObject.SetActive(flip);
+        
     }
 }

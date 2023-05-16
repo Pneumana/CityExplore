@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3527973933936577609}
   - component: {fileID: 7560180029470940649}
   m_Layer: 0
-  m_Name: SpongeCrates
+  m_Name: Crystal
   m_TagString: UpdateOnFaction
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -195,15 +195,13 @@ MonoBehaviour:
     - '?'
     buttonAction:
     - START:SeaMayorElaborate
-    - FACTION:1:1
+    - FACTION:0:1
     - END
     sentences:
-    - Splendid! All that remains for our <color=#008080ff>Tsunami-Maker 9000</color>
-      is to power it!
-    - We had a glowing crystal around here somewhere, but we seem to have misplaced
+    - Awesome. In the <color=orange>center of town</color>should be where you place
       it.
-    - Last anyone saw it, it was <color=orange>on the western side</color> of the
-      city.
+    - Once you've placed the <color=#ebb434>Super Sponges</color>, we'll let you
+      do the honors of activating them.
   destroyOnTrigger: 0
 --- !u!64 &36077048
 MeshCollider:
@@ -282,7 +280,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 45, y: 180, z: 0}
 --- !u!1 &194401773
 GameObject:
@@ -349,24 +347,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialouge:
     name: Land Mayor
-    options: 3
+    options: 2
     buttons:
-    - Elaborate.
+    - I'll do it.
     - I'm in.
-    - I'm out.
+    - Nuh-uh.
     buttonAction:
-    - START:SeaMayorElaborate
-    - FACTION:1:1
+    - FACTION:0:1
+    - FACTION:0:1
     - END
     sentences:
-    - "Wowie! You did it! This is just what we need for our <color=#008080ff>Tsunami-Maker
-      9000</color>! \n"
+    - Finally! With these <color=#ebb434>Super Sponges</color>We'll be able to dry
+      up those snnoying fish!
     - Err... Did I just say that out loud?
-    - It seems that you may be still intent on helping us, is that right?
-    - Maybe this neat trinket that lets you <color=#800080ff>dash</color> through
-      the air and water, <color=#800080ff>unhindered by gravity</color> will sweeten
-      the deal?
-    - Here, take it. You use it by pressing the LEFT SHIFT key.
+    - 'If you help us, I''ll give oyu this neat trinket. It lets you <color=#800080ff>raise
+      a ramp from the ground</color>. '
+    - You activate it by pressing Q, using WASD to move it to where you'd like, then
+      releasing Q.
+    - Your next task is to place <color=#ebb434>Super Sponges</color> around the
+      fish city.
   destroyOnTrigger: 0
 --- !u!64 &194401777
 MeshCollider:
@@ -445,7 +444,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 45, y: 180, z: 0}
 --- !u!1 &248933868
 GameObject:
@@ -560,7 +559,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 60.774, y: 0, z: 0}
 --- !u!1 &287678459
 GameObject:
@@ -630,7 +629,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 82654a5c092f9ba4e84886fe2c7cd3b4, type: 2}
+  - {fileID: 2100000, guid: a2748bd3fa3579d4ba09c1c5c0de0ef8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -910,7 +909,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fd24981deaa9cf40a4dc6982192fa15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  landLevel: 4
+  landLevel: 5
   seaLevel: 0
   fishmanLevel: 0
   specificStep: 0
@@ -948,7 +947,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 82654a5c092f9ba4e84886fe2c7cd3b4, type: 2}
+  - {fileID: 2100000, guid: a2748bd3fa3579d4ba09c1c5c0de0ef8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -992,8 +991,132 @@ Transform:
   m_Children:
   - {fileID: 324716958}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+--- !u!1001 &548963907
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6773841013878578591, guid: d7dfe8e37b6884c4dbc4e7b83b90f20c, type: 3}
+      propertyPath: m_Name
+      value: ActivateSponge
+      objectReference: {fileID: 0}
+    - target: {fileID: 7029796897551952879, guid: d7dfe8e37b6884c4dbc4e7b83b90f20c, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7029796897551952879, guid: d7dfe8e37b6884c4dbc4e7b83b90f20c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 5.1428204
+      objectReference: {fileID: 0}
+    - target: {fileID: 7029796897551952879, guid: d7dfe8e37b6884c4dbc4e7b83b90f20c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.984
+      objectReference: {fileID: 0}
+    - target: {fileID: 7029796897551952879, guid: d7dfe8e37b6884c4dbc4e7b83b90f20c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 4.607251
+      objectReference: {fileID: 0}
+    - target: {fileID: 7029796897551952879, guid: d7dfe8e37b6884c4dbc4e7b83b90f20c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7029796897551952879, guid: d7dfe8e37b6884c4dbc4e7b83b90f20c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7029796897551952879, guid: d7dfe8e37b6884c4dbc4e7b83b90f20c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7029796897551952879, guid: d7dfe8e37b6884c4dbc4e7b83b90f20c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7029796897551952879, guid: d7dfe8e37b6884c4dbc4e7b83b90f20c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7029796897551952879, guid: d7dfe8e37b6884c4dbc4e7b83b90f20c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7029796897551952879, guid: d7dfe8e37b6884c4dbc4e7b83b90f20c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8666403952774654976, guid: d7dfe8e37b6884c4dbc4e7b83b90f20c, type: 3}
+      propertyPath: dialouge.name
+      value: Super Sponge Button
+      objectReference: {fileID: 0}
+    - target: {fileID: 8666403952774654976, guid: d7dfe8e37b6884c4dbc4e7b83b90f20c, type: 3}
+      propertyPath: dialouge.sentences.Array.data[0]
+      value: Activate the <color=#ebb434>Super Sponge</color>?
+      objectReference: {fileID: 0}
+    - target: {fileID: 8666403952774654976, guid: d7dfe8e37b6884c4dbc4e7b83b90f20c, type: 3}
+      propertyPath: dialouge.buttonAction.Array.data[0]
+      value: START:WatchCutsceneDrain
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 1976376051468224777, guid: d7dfe8e37b6884c4dbc4e7b83b90f20c, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: d7dfe8e37b6884c4dbc4e7b83b90f20c, type: 3}
+--- !u!1 &738989353
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 738989355}
+  - component: {fileID: 738989354}
+  m_Layer: 0
+  m_Name: FactionRank
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &738989354
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 738989353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5526b04925efe3348810e9364769cce7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  landRank: 0
+  seaRank: 0
+  fishmanRank: 0
+  hasEnteredTown: 0
+  cameFrom: 
+  factionObjects: []
+  factionarray: []
+  wait: 0
+  forceRefresh: 0
+  playcutscene: 0
+--- !u!4 &738989355
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 738989353}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -64.83045, y: -50.73086, z: -22.160872}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 22
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &740515434
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1007,7 +1130,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3802621286469270499, guid: 285a0b9ef7985024381c42a6fcdfc606, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3802621286469270499, guid: 285a0b9ef7985024381c42a6fcdfc606, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9417,7 +9540,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!1001 &913400914
 PrefabInstance:
@@ -9440,7 +9563,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4326212891849045779, guid: 26640d9b02515864dabaf4dc4c3857ac, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4326212891849045779, guid: 26640d9b02515864dabaf4dc4c3857ac, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9532,7 +9655,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1121786931
 GameObject:
@@ -9688,7 +9811,7 @@ Transform:
   - {fileID: 2134090703}
   - {fileID: 1121786932}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1230336588
 GameObject:
@@ -9758,7 +9881,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 82654a5c092f9ba4e84886fe2c7cd3b4, type: 2}
+  - {fileID: 2100000, guid: a2748bd3fa3579d4ba09c1c5c0de0ef8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -9860,12 +9983,13 @@ MonoBehaviour:
     - button3
     buttonAction:
     - END
-    - FACTION:1:1
+    - FACTION:0:1
     - 
     sentences:
-    - Great! I just need you to get the big fan located in the <color=orange>Warehouse</color>.
-    - It's <color=orange>to the east</color> of the Land City Hall <color=orange>atop
-      a hill</color>.
+    - Well, if you are on the way to the ocean, you can pick up a shipment we've
+      recieved. It's <color=orange>on the dock, the northernmost point</color> of
+      the beach
+    - Please get our shipment.
   destroyOnTrigger: 0
 --- !u!64 &1263827313
 MeshCollider:
@@ -9944,7 +10068,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 45, y: 180, z: 0}
 --- !u!1 &1285758630
 GameObject:
@@ -10013,7 +10137,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 82654a5c092f9ba4e84886fe2c7cd3b4, type: 2}
+  - {fileID: 2100000, guid: 3857a7c31c2d4514cbdea55f4d673498, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -10115,13 +10239,11 @@ MonoBehaviour:
     - I'm out.
     buttonAction:
     - START:SeaMayorElaborate
-    - FACTION:1:1
+    - FACTION:0:1
     - END
     sentences:
-    - You've done it! All that remains is to turn it on!
-    - Walk over to our <color=#008080ff>Tsunami-Maker 9000</color> when you feel
-      like pressing the button.
-    - You've just helped us so much. It's only fitting that you do the honors.
+    - All set? activate the device  <color=orange>to my right</color> when you're
+      ready to watch the fireworks.
   destroyOnTrigger: 0
 --- !u!64 &1364074036
 MeshCollider:
@@ -10200,7 +10322,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 20
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 45, y: 180, z: 0}
 --- !u!1 &1374823984
 GameObject:
@@ -10370,7 +10492,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 82654a5c092f9ba4e84886fe2c7cd3b4, type: 2}
+  - {fileID: 2100000, guid: a2748bd3fa3579d4ba09c1c5c0de0ef8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -10413,7 +10535,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
 --- !u!1 &1509743635
 GameObject:
@@ -10483,7 +10605,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 82654a5c092f9ba4e84886fe2c7cd3b4, type: 2}
+  - {fileID: 2100000, guid: a2748bd3fa3579d4ba09c1c5c0de0ef8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -10556,7 +10678,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1694297572
 GameObject:
@@ -10610,7 +10732,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 82654a5c092f9ba4e84886fe2c7cd3b4, type: 2}
+  - {fileID: 2100000, guid: 3857a7c31c2d4514cbdea55f4d673498, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -10653,7 +10775,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1757287830
 GameObject:
@@ -10698,7 +10820,7 @@ Transform:
   m_Children:
   - {fileID: 847467363}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!1 &1774370105
 GameObject:
@@ -10753,7 +10875,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 82654a5c092f9ba4e84886fe2c7cd3b4, type: 2}
+  - {fileID: 2100000, guid: a2748bd3fa3579d4ba09c1c5c0de0ef8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -10796,7 +10918,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: -90}
 --- !u!1 &1791644073
 GameObject:
@@ -10870,7 +10992,7 @@ MonoBehaviour:
     - button3
     buttonAction:
     - END
-    - FACTION:1:1
+    - FACTION:0:1
     - 
     sentences:
     - Hello! We are having some disagreements with the sea people.
@@ -10882,9 +11004,6 @@ MonoBehaviour:
       jump?
     - Well, you just simply press SPACE BAR while on the ground to <color=#800080ff>gain
       some height</color>.
-    - Well, if you are on the way to the ocean, you can pick up a shipment we've
-      recieved. It's <color=orange>on the dock, the northernmost point</color> of
-      the beach
   destroyOnTrigger: 0
 --- !u!64 &1791644077
 MeshCollider:
@@ -10963,7 +11082,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 45, y: 180, z: 0}
 --- !u!1 &1813358094
 GameObject:
@@ -11032,7 +11151,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 82654a5c092f9ba4e84886fe2c7cd3b4, type: 2}
+  - {fileID: 2100000, guid: 3857a7c31c2d4514cbdea55f4d673498, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -11115,7 +11234,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 82654a5c092f9ba4e84886fe2c7cd3b4, type: 2}
+  - {fileID: 2100000, guid: a2748bd3fa3579d4ba09c1c5c0de0ef8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -11158,7 +11277,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!1 &1937787009
 GameObject:
@@ -11227,7 +11346,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 82654a5c092f9ba4e84886fe2c7cd3b4, type: 2}
+  - {fileID: 2100000, guid: 3857a7c31c2d4514cbdea55f4d673498, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -11325,7 +11444,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 82654a5c092f9ba4e84886fe2c7cd3b4, type: 2}
+  - {fileID: 2100000, guid: a2748bd3fa3579d4ba09c1c5c0de0ef8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -11421,7 +11540,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1973570093
 GameObject:
@@ -11466,7 +11585,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2134090702
 GameObject:
