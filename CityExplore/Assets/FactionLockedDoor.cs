@@ -10,12 +10,17 @@ public class FactionLockedDoor : MonoBehaviour
     public bool specificStep;
     void Start()
     {
+        UpdateFactions();
+    }
+
+    public void UpdateFactions()
+    {
         if (specificStep)
             CanISpawn();
-        else
-            UpdateFactions();
+        else if (!specificStep)
+            Kill();
     }
-    public void UpdateFactions()
+    public void Kill()
     {
         var factions = FactionRank.instance;
         if (factions != null)
@@ -26,7 +31,7 @@ public class FactionLockedDoor : MonoBehaviour
                 {
                     if (factions.fishmanRank >= fishmanLevel)
                     {
-                        Destroy(gameObject);
+                        gameObject.SetActive(false);
                     }
                 }
             }
@@ -34,6 +39,7 @@ public class FactionLockedDoor : MonoBehaviour
     }
     public void CanISpawn()
     {
+        var flip = false;
         var factions = FactionRank.instance;
         if (factions != null)
         {
@@ -43,11 +49,15 @@ public class FactionLockedDoor : MonoBehaviour
                 {
                     if (factions.fishmanRank == fishmanLevel)
                     {
-                        return;
+                        flip = true;
                     }
                 }
             }
         }
-        Destroy(gameObject);
+        if (!factions.factionObjects.Contains(gameObject))
+        {
+            factions.factionObjects.Add(gameObject);
+        }
+        gameObject.SetActive(flip);
     }
 }

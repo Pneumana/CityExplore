@@ -12,9 +12,11 @@ public class FactionRank : MonoBehaviour
     public static FactionRank instance;
     public bool hasEnteredTown = false;
     public string cameFrom;
-    public GameObject[] factionObjects;
+    public List<GameObject> factionObjects = new List<GameObject>();
+    private GameObject[] factionarray;
     private GameObject here;
     public int wait = 0;
+    public bool forceRefresh;
     // Start is called before the first frame update
     void Awake()
     {
@@ -35,9 +37,14 @@ public class FactionRank : MonoBehaviour
     }
     public void UpdateFactionObjs()
     {
-        factionObjects = GameObject.FindGameObjectsWithTag("UpdateOnFaction");
+        //factionarray = GameObject.FindGameObjectsWithTag("UpdateOnFaction");
+/*        foreach(GameObject obj in factionarray)
+        {
+            factionObjects.Add(obj);
+        }*/
         foreach (GameObject obj in factionObjects)
         {
+            Debug.Log(obj.name + " has been updated");
             obj.GetComponent<FactionLockedDoor>().UpdateFactions();
         }
     }
@@ -92,7 +99,7 @@ public class FactionRank : MonoBehaviour
     }
     public void RankUp(int targetFaction, int increase)
     {
-        UpdateFactionObjs();
+        
         //land
         if(targetFaction == 0)
         {
@@ -116,6 +123,7 @@ public class FactionRank : MonoBehaviour
         //dash
 
         //player gets abilites right before an ending. "Thanks for helping us this much" type thing.
+        UpdateFactionObjs();
     }
     // Update is called once per frame
     void Update()
@@ -134,6 +142,11 @@ public class FactionRank : MonoBehaviour
             {
                 LoadPosition();
             }
+        }
+        if (forceRefresh)
+        {
+            UpdateFactionObjs();
+            forceRefresh = false;
         }
     }
     void UpdateAbilities()

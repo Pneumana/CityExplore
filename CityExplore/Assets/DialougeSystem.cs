@@ -47,6 +47,7 @@ public class DialougeSystem : MonoBehaviour
     }
     public void EnterDialouge(Dialouge talk)
     {
+
         textbox.transform.Find("Name").gameObject.GetComponent<TextMeshProUGUI>().text = talk.name;
         Debug.Log(talk.name);
         sentences.Clear();
@@ -66,10 +67,14 @@ public class DialougeSystem : MonoBehaviour
         options = talk.options;
         buttonNames = talk.buttons;
         buttonActions = talk.buttonAction;
-        leftButton.transform.Find("Option1Text").gameObject.GetComponent<TextMeshProUGUI>().text = buttonNames[0];
-        middleButton.transform.Find("Option2Text").gameObject.GetComponent<TextMeshProUGUI>().text = buttonNames[1];
-        rightButton.transform.Find("Option3Text").gameObject.GetComponent<TextMeshProUGUI>().text = buttonNames[2];
-        if(talk.sentences.Length == 1) 
+        //if(buttonNames)
+        leftButton.transform.Find("Option1Text").gameObject.GetComponent<TextMeshProUGUI>().text = talk.buttons[0];
+        middleButton.transform.Find("Option2Text").gameObject.GetComponent<TextMeshProUGUI>().text = talk.buttons[1];
+        rightButton.transform.Find("Option3Text").gameObject.GetComponent<TextMeshProUGUI>().text = talk.buttons[2];
+        leftButton.SetActive(false);
+        rightButton.SetActive(false);
+        middleButton.SetActive(false);
+        if (talk.sentences.Length == 1) 
         {
             if (options == 0)
             {
